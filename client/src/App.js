@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes,Route } from 'react-router-dom';
+
+import HomePage from './components/pages/HomePage';
+import PageNotFound from './components/pages/PageNotFound';
+import SprintPage from './components/pages/SprintPage';
+import UserPage from './components/pages/UserPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/sprints/:sprintId' element={<SprintPage/>}/>
+
+      <Route path='/users/:userId' element={<UserPage/>} />
+      <Route path='*' element={<PageNotFound/>}/>  
+    </Routes>
   );
 }
 
