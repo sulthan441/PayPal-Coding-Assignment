@@ -15,7 +15,7 @@ function App() {
       <Route path='/api/sprints' element={<SprintPage/>}/>
       <Route path='/tasks' element={<TaskList/>}/>
       <Route path='/tasks/new' element={<AddTaskForm/>} />
-      <Route path='/users/:userId' element={<UserPage/>} />
+      <Route path='/sprints/new' element={<UserPage/>} />
       <Route path='*' element={<PageNotFound/>}/>  
     </Routes>
   );

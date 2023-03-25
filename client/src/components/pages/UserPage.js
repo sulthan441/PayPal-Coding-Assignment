@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 
 import axios from 'axios';
-
+import "../../App.css"
 const UserPage = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/tasks')
+    axios.get('http://localhost:8000/api/tasks')
       .then(res => {
         setTasks(res.data);
       })
@@ -16,7 +16,7 @@ const UserPage = () => {
 
   const handleChange = (event) => {
     const selectedUser = event.target.value;
-    axios.get(`/api/tasks?user=${selectedUser}`)
+    axios.get(`http://localhost:8000/api/tasks?user=${selectedUser}`)
       .then(res => {
         setTasks(res.data);
       })
@@ -24,7 +24,7 @@ const UserPage = () => {
   }
 
   return (
-    <div>
+    <div className='task-assigned'>
       <h1>Tasks Assigned to User</h1>
       <select onChange={handleChange}>
         <option value="">Select User</option>
