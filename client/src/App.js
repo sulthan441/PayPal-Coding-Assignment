@@ -12,7 +12,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path='/sprints' element={<SprintPage/>}/>
+      <Route path='/api/sprints' element={<SprintPage/>}/>
       <Route path='/tasks' element={<TaskList/>}/>
       <Route path='/tasks/new' element={<AddTaskForm/>} />
       <Route path='/users/:userId' element={<UserPage/>} />

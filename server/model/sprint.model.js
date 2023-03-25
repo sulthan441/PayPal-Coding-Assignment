@@ -9,15 +9,15 @@ const sprintSchema = new mongoose.Schema({
         required: true
     },
     startDate: {
-        type: Date,
+        type: String,
         required: true
     },
     endDate: {
-        type: Date,
+        type: String,
         required: true
     },
     task: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "Task"
 
     }]

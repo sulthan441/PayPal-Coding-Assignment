@@ -5,39 +5,34 @@ const SprintPage = () => {
   const [sprintTasks, setSprintTasks] = useState([]);
   const [sprintName, setSprintName] = useState('');
 
-
-  const getSprint = async()=>{
- try {
-  let data = await axios.get('http://localhost:5000/api/sprints')
-  console.log(data)
-  setSprintTasks(data.tasks);
-  setSprintName(data.name);
- 
- } catch (err) {
-console.log(err)
- }
-  }
-
   useEffect(() => {
-  /*   axios.get('https://localhost:5000/api/sprints')
-      .then(res => {
-        setSprintTasks(res.data.tasks);
-        setSprintName(res.data.name);
-      })
-      .catch(err => {
-        console.log(err);
-      }); */
-      getSprint();
+    const fetchSprint = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/sprints');
+
+        console.log(response)
+        
+        setSprintTasks(response.data.data.task);
+        setSprintName(response.data.data.name);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSprint();
   }, []);
 
   return (
     <div>
       <h1>{sprintName}</h1>
-      <ul>
-        {sprintTasks.map(task => (
-          <li key={task._id}>{task.name} - {task.status}</li>
-        ))}
-      </ul>
+      {sprintTasks.length > 0 ? (
+        <ul>
+          {sprintTasks.map(task => (
+            <li key={task._id}>{task.name} - {task.status}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading tasks...</p>
+      )}
     </div>
   );
 };

@@ -17,7 +17,7 @@ const HomePage = () => {
       <div>
         <h2 className='heading' >Sprints</h2>
         <ul className='links'>
-          <li  ><Link to="/sprints">View All Sprints</Link></li>
+          <li  ><Link to="/api/sprints">View All Sprints</Link></li>
           <li><Link to="/sprints/new">Create a New Sprint</Link></li>
         </ul>
       </div>
