@@ -159,3 +159,59 @@ select {
 #button:hover {
   background-color: #3e8e41;
 }
+
+
+.task-item {
+  margin: auto;
+  border: 1px solid #0b0808;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  width: max-content;
+  background-color: #61dafb;
+}
+
+ .task-item h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+ .task-item select {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+ .task-item p {
+  font-size: 16px;
+  margin: 5px 0;
+  font-size: large;
+  font-weight: 600;
+}
+
+
+#taskList {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#taskList h2 {
+  font-size: 30px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#taskList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList p {
+  font-size: 20px;
+  margin: 10px 0;
+  text-align: center;
+}

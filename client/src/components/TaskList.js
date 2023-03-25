@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TaskItem from './TaskItem';
 import axios from 'axios';
+import "../App.css"
 const TaskList = () => {
 
 const [tasks,setTasks] = useState([])
@@ -30,7 +31,7 @@ const [tasks,setTasks] = useState([])
 
   const getTasks = async()=>{
     try {
-     let data = await axios.get('http://localhost:5000/api/tasks')
+     let data = await axios.get('http://localhost:8000/api/tasks')
      setTasks(data.data)
      console.log(data)
     
