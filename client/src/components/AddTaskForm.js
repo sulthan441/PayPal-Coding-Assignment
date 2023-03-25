@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import "../App.css"
 const AddTaskForm = ({ sprintId, setTasks }) => {
   const [taskName, setTaskName] = useState('');
   const [taskType, setTaskType] = useState('bug');
@@ -49,8 +49,8 @@ const AddTaskForm = ({ sprintId, setTasks }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} id="form">
+      <div id='form-div'>
         <label htmlFor="task-name">Task Name:</label>
         <input
           id="task-name"
@@ -70,7 +70,7 @@ const AddTaskForm = ({ sprintId, setTasks }) => {
       </div>
       <div>
         <label htmlFor="assignee">Assignee:</label>
-        <input
+        <input  
           id="assignee"
           type="text"
           value={assignee}
@@ -78,7 +78,7 @@ const AddTaskForm = ({ sprintId, setTasks }) => {
           required
         />
       </div>
-      <button type="submit">Add Task</button>
+      <button id='button' type="submit">Add Task</button>
     </form>
   );
 };
