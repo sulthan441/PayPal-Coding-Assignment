@@ -1,26 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const taskController = require('../controller/taskController');
+const {createTask,getAllTasks,getTask,getTaskById,getTasksByAssignee,updateTask,deleteTask,} = require('../controller/taskController');
 
 // Create a new Task
-router.post('/', taskController.createTask);
+router.post('/', createTask);
 
 // Get all Tasks
-router.get('/', taskController.getAllTasks);
+router.get('/', getAllTasks);
 
 // Get a single Task by ID
-router.get('/:id', taskController.getTaskById);
+router.get('/:id', getTaskById);
 
 // Update a Task by ID
-router.patch('/:id', taskController.updateTaskById);
+router.patch('/:id', updateTask);
 
 // Delete a Task by ID
-router.delete('/:id', taskController.deleteTaskById);
+router.delete('/:id', deleteTask);
 
 // Get all Tasks of a particular Sprint by Sprint ID
-router.get('/sprint/:sprintId', taskController.getTasksBySprintId);
+router.get('/sprint/:sprintId', getTask);
 
 // Get all Tasks assigned to a user by assignee name
-router.get('/user/:assignee', taskController.getTasksByAssignee);
+router.get('/user/:assignee', getTasksByAssignee);
 
 module.exports = router;

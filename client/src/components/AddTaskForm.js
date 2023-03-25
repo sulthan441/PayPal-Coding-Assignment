@@ -23,13 +23,22 @@ const AddTaskForm = ({ sprintId, setTasks }) => {
 
     const newTask = {
       name: taskName,
+      description:"default",
       type: taskType,
       assignee,
       status: 'todo',
     };
+    console.log(newTask)
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/sprints/${sprintId}/tasks`, newTask);
+
+      const response = await axios.post(`http://localhost:8000/api/tasks`, {
+        name: taskName,
+        description:"default",
+        type: taskType,
+        assignee,
+        status: 'todo'
+      });
       setTasks((prevTasks) => [...prevTasks, response.data]);
       setTaskName('');
       setTaskType('bug');

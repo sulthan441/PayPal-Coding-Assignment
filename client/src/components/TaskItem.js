@@ -4,12 +4,14 @@ const TaskItem = ({ task, handleStatusChange, handleAssigneeChange }) => {
 
   const handleStatusSelect = (event) => {
     const newStatus = event.target.value;
-    handleStatusChange(newStatus, task._id);
+    let id =  task._id
+    handleStatusChange(newStatus, id);
   };
 
   const handleAssigneeSelect = (event) => {
     const newAssignee = event.target.value;
-    handleAssigneeChange(newAssignee, task._id);
+    let id =  task._id
+    handleAssigneeChange(newAssignee,id);
   };
 
   return (

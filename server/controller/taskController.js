@@ -29,9 +29,10 @@ exports.getTaskById = async (req, res) => {
 // Update a Task by ID
 exports.updateTask = async (req, res) => {
     try {
-        const updatedTask = await res.task.set(req.body);
-        const savedTask = await updatedTask.save();
-        res.json(savedTask);
+        const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(task);
+   
+        
     } catch (err) {
         res.status(400).json({ message: err.message });
     }

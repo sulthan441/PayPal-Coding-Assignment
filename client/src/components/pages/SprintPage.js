@@ -5,15 +5,29 @@ const SprintPage = () => {
   const [sprintTasks, setSprintTasks] = useState([]);
   const [sprintName, setSprintName] = useState('');
 
+
+  const getSprint = async()=>{
+ try {
+  let data = await axios.get('http://localhost:5000/api/sprints')
+  console.log(data)
+  setSprintTasks(data.tasks);
+  setSprintName(data.name);
+ 
+ } catch (err) {
+console.log(err)
+ }
+  }
+
   useEffect(() => {
-    axios.get('https://localhost:5000/api/sprints')
+  /*   axios.get('https://localhost:5000/api/sprints')
       .then(res => {
         setSprintTasks(res.data.tasks);
         setSprintName(res.data.name);
       })
       .catch(err => {
         console.log(err);
-      });
+      }); */
+      getSprint();
   }, []);
 
   return (
