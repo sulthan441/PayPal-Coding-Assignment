@@ -6,13 +6,7 @@ const HomePage = () => {
     <div id='main-div'>
       <h1 className='heading'>Welcome to Never Forget</h1>
       <p id='description'>Never forget any task, bug or feature again. Keep track of everything in one place.</p>
-      <div>
-        <h2 id='projects'>Projects</h2>
-        <ul className='links'>
-          <li><Link to="/projects">View All Projects</Link></li>
-          <li><Link to="/projects/new">Create a New Project</Link></li>
-        </ul>
-      </div>
+
       <div>
         <h2  className='heading'>Tasks</h2>
         <ul className='links'>

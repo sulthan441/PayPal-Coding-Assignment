@@ -167,13 +167,16 @@ select {
   padding: 30px;
   margin: 10px;
   border-radius: 5px;
-  width: max-content;
+  width: 50%;
+  margin: auto;
+  /* width: max-content; */
   background-color: #61dafb;
 }
 
  .task-item h3 {
   font-size: 20px;
   margin-top: 0;
+  margin: auto;
 }
 
  .task-item select {
@@ -214,4 +217,9 @@ select {
   font-size: 20px;
   margin: 10px 0;
   text-align: center;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
